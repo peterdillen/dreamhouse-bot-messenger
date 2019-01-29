@@ -2,15 +2,15 @@
 
 let nforce = require('nforce'),
 
-    SF_CLIENT_ID = process.env.SF_CLIENT_ID,
-    SF_CLIENT_SECRET = process.env.SF_CLIENT_SECRET,
-    SF_USER_NAME = process.env.SF_USER_NAME,
-    SF_PASSWORD = process.env.SF_PASSWORD;
+    SF_CLIENT_ID = '3MVG9fTLmJ60pJ5KmCpSrZO8.PDA46HNBJFSutUMlgMvrafU1wEjKQjEEjaglKy40pEvvN07NbhE_x4Kovk8y',   //process.env.SF_CLIENT_ID,
+    SF_CLIENT_SECRET = '6999411422438489539',  //process.env.SF_CLIENT_SECRET,
+    SF_USER_NAME = 'peter.dillen@sf-messenger.demo',  //process.env.SF_USER_NAME,
+    SF_PASSWORD = 'Salesforce1';  //process.env.SF_PASSWORD;
 
 let org = nforce.createConnection({
     clientId: SF_CLIENT_ID,
     clientSecret: SF_CLIENT_SECRET,
-    redirectUri: 'http://localhost:3000/oauth/_callback',
+    redirectUri: 'http://127.0.0.1',   //'http://localhost:3000/oauth/_callback',
     mode: 'single',
     autoRefresh: true
 });
