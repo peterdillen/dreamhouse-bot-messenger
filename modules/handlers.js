@@ -59,6 +59,10 @@ exports.hi = (sender) => {
     });
 };
 
+exports.duvel = (sender) => {
+    messenger.send({text: `So you like Duvel? Let met show other beers you may like.`}, sender);
+};
+
 exports.help = (sender) => {
     messenger.send({text: `You can ask me questions like "Find houses in Boston", "3 bedrooms in Boston", "3 bedrooms in Boston between 500000 and 750000", "show me price changes"`}, sender);
 };
