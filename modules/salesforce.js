@@ -63,6 +63,27 @@ let findProperties = (params) => {
 
 };
 
+let findBeersSimilar = (beer) => {
+    return new Promise((resolve, reject) => {
+        let q = `SELECT id,
+                    Name,
+                    Picture_URL__c
+                FROM Beer__c
+                WHERE Similar_Beers__c LIKE '%${beer}%'
+                LIMIT 5`;
+        console.log(q);
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                console.error(err);
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
 let findPropertiesByCategory = (category) => {
     return new Promise((resolve, reject) => {
         let q = `SELECT id,
@@ -149,4 +170,5 @@ exports.org = org;
 exports.findProperties = findProperties;
 exports.findPropertiesByCategory = findPropertiesByCategory;
 exports.findPriceChanges = findPriceChanges;
+exports.findBeersSimilar = findBeersSimilar;
 exports.createCase = createCase;
