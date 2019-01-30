@@ -62,7 +62,7 @@ exports.hi = (sender) => {
 exports.duvel = (sender) => {
   messenger.send({text: `So you like Duvel? Let met show other beers you may like.`}, sender);
   salesforce.findBeersSimilar('Duvel').then(findBeersSimilar => {
-      messenger.send(formatter.findBeersSimilar('Duvel'), sender);
+      messenger.send(formatter.formatBeers(findBeersSimilar), sender);
   });
 };
 
