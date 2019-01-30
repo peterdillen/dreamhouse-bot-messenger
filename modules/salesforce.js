@@ -73,6 +73,7 @@ let findBeersSimilar = (beer) => {
                 LIMIT 5`;
         console.log(q);
         org.query({query: q}, (err, resp) => {
+          console.log(err);
             if (err) {
                 console.error(err);
                 reject("An error as occurred");
