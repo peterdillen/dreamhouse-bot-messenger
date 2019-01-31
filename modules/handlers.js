@@ -62,7 +62,9 @@ exports.hi = (sender) => {
 exports.duvel = (sender) => {
   messenger.send({text: `So you like Duvel? Let met show other beers you may like.`}, sender);
   salesforce.findBeersSimilar('Duvel').then(properties => {
+      console.log('beforesend');
       messenger.send(formatter.formatBeers(properties), sender);
+      console.log('aftersend');
       //messenger.send({text: `Found it.`}, sender);
   });
 };
