@@ -11,21 +11,21 @@ exports.formatProperties = properties => {
                 subtitle: `${property.get("Address__c")}, ${property.get("City__c")} ${property.get("State__c")} · ${numeral(property.get("Price__c")).format('$0,0')}`,
                 "image_url": property.get("Picture__c"),
                 "buttons": [
-                    {
-                        "type": "postback",
-                        "title": "Schedule visit",
-                        "payload": "schedule_visit," + property.getId()
-                    },
-                    {
-                        "type": "postback",
-                        "title": "View broker info",
-                        "payload": "contact_broker," + property.getId()
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Contact me",
-                        "payload": "contact_me," + property.getId()
-                    }
+                  {
+                      "type": "postback",
+                      "title": "Schedule visit",
+                      "payload": "schedule_visit," + property.getId()
+                  },
+                  {
+                      "type": "postback",
+                      "title": "View broker info",
+                      "payload": "contact_broker," + property.getId()
+                  },
+                  {
+                      "type": "postback",
+                      "title": "Contact me",
+                      "payload": "contact_me," + property.getId()
+                  }
                 ]
             })
         }
@@ -49,21 +49,21 @@ exports.formatBeers = properties => {
                 subtitle: property.get("Description__c"),
                 "image_url": property.get("Picture_URL__c"),
                 "buttons": [
-                    {
-                        "type": "postback",
-                        "title": "Schedule visit",
-                        "payload": "schedule_visit," + property.getId()
-                    },
-                    {
-                        "type": "postback",
-                        "title": "View broker info",
-                        "payload": "contact_broker," + property.getId()
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Contact me",
-                        "payload": "contact_me," + property.getId()
-                    }
+                  {
+                      "type": "postback",
+                      "title": "Order beer",
+                      "payload": "beer_order," + property.getId()
+                  },
+                  {
+                      "type": "postback",
+                      "title": "Find store",
+                      "payload": "beer_store," + property.getId()
+                  },
+                  {
+                      "type": "postback",
+                      "title": "Give feedback",
+                      "payload": "beer_feedback," + property.getId()
+                  }
                 ]
             })
         }
@@ -164,6 +164,30 @@ exports.formatBroker = broker => {
             {
                 "type": "postback",
                 "title": "Contact Me",
+                "payload": "contact_me"
+            }]
+    });
+    return {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": elements
+            }
+        }
+    };
+};
+
+exports.formatBeerStore = store => {
+    let elements = [];
+    elements.push({
+        title: "Colruyt",
+        subtitle: "https://www.colruyt.be/nl/over-onze-producten/bier-bij-colruyt",
+        "image_url": "https://www.mobius.eu/app/uploads/Colruyt-laagste-prijzen-492x0-c-default.png",
+        "buttons": [
+            {
+                "type": "postback",
+                "title": "Directions",
                 "payload": "contact_me"
             }]
     });

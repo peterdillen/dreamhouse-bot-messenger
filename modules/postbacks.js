@@ -28,4 +28,19 @@ exports.contact_me = (sender, values) => {
         });
     });
 
+//beerbot start
+exports.beer_order = (sender, values) => {
+    messenger.send({text: "Beer order"}, sender);
+};
+
+exports.beer_store = (sender, values) => {
+    messenger.send({text: "Beer store"}, sender);
+    messenger.send(formatter.formatBeerStore(), sender);
+};
+
+exports.beer_feedback = (sender, values) => {
+    messenger.send({text: "Beer feedback"}, sender);
+};
+//beerbot end
+
 };
