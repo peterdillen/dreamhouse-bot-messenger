@@ -46,7 +46,7 @@ exports.formatBeers = properties => {
     properties.forEach(property => {
             elements.push({
                 title: property.get("Name"),
-                subtitle: 'test',
+                subtitle: property.get("Name"),
                 "image_url": property.get("Picture_URL__c"),
                 "buttons": [
                     {
