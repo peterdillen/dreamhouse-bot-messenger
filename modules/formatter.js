@@ -41,11 +41,12 @@ exports.formatProperties = properties => {
     };
 };
 
-exports.findBeersSimilar = properties => {
+exports.formatBeers = properties => {
     let elements = [];
     properties.forEach(property => {
             elements.push({
-                Name: property.get("Name"),
+                title: property.get("Name"),
+                subtitle: 'test',
                 "image_url": property.get("Picture_URL__c"),
                 "buttons": [
                     {
