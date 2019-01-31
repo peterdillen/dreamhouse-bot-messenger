@@ -67,13 +67,14 @@ let findBeersSimilar = (beer) => {
     return new Promise((resolve, reject) => {
         let q = `SELECT id,
                     Name,
+                    Description__c,
                     Picture_URL__c
                 FROM Beer__c
                 WHERE Similar_Beers__c LIKE '%${beer}%'
                 LIMIT 5`;
         console.log(q);
         org.query({query: q}, (err, resp) => {
-          console.log(err);
+            console.log(err);
             if (err) {
                 console.error(err);
                 reject("An error as occurred");

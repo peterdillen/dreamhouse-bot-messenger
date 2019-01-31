@@ -42,12 +42,11 @@ exports.formatProperties = properties => {
 };
 
 exports.formatBeers = properties => {
-  console.log('beforeformat');
     let elements = [];
     properties.forEach(property => {
             elements.push({
                 title: property.get("Name"),
-                subtitle: property.get("Name"),
+                subtitle: property.get("Description__c"),
                 "image_url": property.get("Picture_URL__c"),
                 "buttons": [
                     {
@@ -78,7 +77,6 @@ exports.formatBeers = properties => {
             }
         }
     };
-  console.log('afterformat');
 };
 
 exports.formatPriceChanges = priceChanges => {

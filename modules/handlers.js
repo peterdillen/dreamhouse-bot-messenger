@@ -65,7 +65,6 @@ exports.duvel = (sender) => {
       console.log('beforesend');
       messenger.send(formatter.formatBeers(properties), sender);
       console.log('aftersend');
-      //messenger.send({text: `Found it.`}, sender);
   });
 };
 
