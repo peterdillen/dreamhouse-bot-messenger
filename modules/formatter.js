@@ -51,18 +51,13 @@ exports.formatBeers = properties => {
                 "buttons": [
                   {
                       "type": "postback",
-                      "title": "Order beer",
+                      "title": "More information",
                       "payload": "beer_order," + property.getId()
                   },
                   {
                       "type": "postback",
-                      "title": "Find store",
+                      "title": "I'll take it",
                       "payload": "beer_store," + property.getId()
-                  },
-                  {
-                      "type": "postback",
-                      "title": "Give feedback",
-                      "payload": "beer_feedback," + property.getId()
                   }
                 ]
             })
